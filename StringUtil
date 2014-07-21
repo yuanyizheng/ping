@@ -1,0 +1,53 @@
+public class StringUtil{
+
+	 public static final boolean isChinese(String strName) {
+	   char[] ch = strName.toCharArray();// 把字符串转化为字符数组
+	   for (int i = 0; i < ch.length; i++) {
+	    char c = ch[i];
+	    if (isChinese(c)) {
+	     return true;
+	    }
+	   }
+	   return false;
+	 }
+
+
+//CJK的意思是“Chinese，Japanese，Korea”的简写 ，实际上就是指中日韩三国的象形文字的Unicode编码 
+ private static final boolean isChinese(char c) {
+   Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
+   if (ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS//CJK 统一表意符号 
+     || ub == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS// CJK 兼容象形文字 
+     || ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A // CJK 统一表意符号扩展 A
+     || ub == Character.UnicodeBlock.GENERAL_PUNCTUATION // 常用标点 
+     || ub == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION // CJK 符号和标点 
+     || ub == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS) { // 半角及全角形式
+    return true;
+   }
+   return false;
+ }
+public static final boolean isChinese(String strName) {
+   char[] ch = strName.toCharArray();// 把字符串转化为字符数组
+   for (int i = 0; i < ch.length; i++) {
+    char c = ch[i];
+    if (isChinese(c)) {
+     return true;
+    }
+   }
+   return false;
+ }
+
+
+//CJK的意思是“Chinese，Japanese，Korea”的简写 ，实际上就是指中日韩三国的象形文字的Unicode编码 
+ private static final boolean isChinese(char c) {
+   Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
+   if (ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS//CJK 统一表意符号 
+     || ub == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS// CJK 兼容象形文字 
+     || ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A // CJK 统一表意符号扩展 A
+     || ub == Character.UnicodeBlock.GENERAL_PUNCTUATION // 常用标点 
+     || ub == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION // CJK 符号和标点 
+     || ub == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS) { // 半角及全角形式
+    return true;
+   }
+   return false;
+ }
+ }
