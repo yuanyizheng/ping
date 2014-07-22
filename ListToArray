@@ -1,0 +1,20 @@
+public class ListToArray {
+
+ /**
+  * 实现list转化成数组
+  * @param args
+  */
+ public static void main(String[] args) {
+ 
+   List<String> list = new ArrayList<String>();
+   list.add("test1");
+   list.add("test2");
+   list.add("test3");
+   list.add("test4");
+   String[] listArrayStrings = list.toArray(new String[list.size()]);
+   for(String stringValue : listArrayStrings){
+      System.out.println(stringValue + "  ");
+    }  
+ }
+
+}
